@@ -542,6 +542,9 @@ int get_local_addr(uint8_t *bytes)
 			continue;
 		if (!ifa->ifa_addr)
 			continue;
+		if (strcmp(ifa->ifa_name, "br1") != 0 & strcmp(ifa->ifa_name, "eth1") != 0) {
+			continue;
+		}
 
 		switch (ifa->ifa_addr->sa_family) {
 		case AF_INET:
